@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RecipesPage } from './recipes.page';
+import { ProductsPage } from './products.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: RecipesPage
+    component: ProductsPage
   },
   {
-    path: ':recipeId',
+    path: ':productId',
     loadChildren:
-      './recipes/recipe-detail/recipe-detail.module#RecipeDetailPageModule'
+      './product-detail/product-detail.module#ProductDetailPageModule'
   }
 ];
 
@@ -24,8 +25,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    HttpClientModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [RecipesPage]
+  declarations: [ProductsPage]
 })
-export class RecipesPageModule {}
+export class ProductsPageModule {}
