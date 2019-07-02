@@ -41,7 +41,7 @@ const routes: Routes = [
           {
             path: ':placeId',
             loadChildren:
-              './offers/offer-booking/offer-booking.module#OffersPageModule'
+              './offers/offer-booking/offer-booking.module#OfferBookingPageModule'
           }
         ]
       }
