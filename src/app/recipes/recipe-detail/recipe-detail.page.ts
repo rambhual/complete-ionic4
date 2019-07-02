@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecipesService } from '../recipes.service';
 import { Recipe } from '../recipe.model';
@@ -9,7 +9,7 @@ import { AlertController } from '@ionic/angular';
   templateUrl: './recipe-detail.page.html',
   styleUrls: ['./recipe-detail.page.scss']
 })
-export class RecipeDetailPage implements OnInit {
+export class RecipeDetailPage implements OnInit, OnDestroy {
   loadedRecipe: Recipe;
   constructor(
     private route: Router,
@@ -30,6 +30,10 @@ export class RecipeDetailPage implements OnInit {
   }
 
   onDeleteRecipe(recipeId: string) {
+    this.AlertDialog(recipeId);
+  }
+
+  private AlertDialog(recipeId: string) {
     this.alertController
       .create({
         header: 'Are you sure!',
@@ -51,5 +55,23 @@ export class RecipeDetailPage implements OnInit {
       .then(alertEl => {
         alertEl.present();
       });
+  }
+
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter');
+  }
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter');
+  }
+
+  ionViewDidLeave() {
+    console.log('ionViewDidLeave');
+  }
+
+  ionViewWillLeave() {
+    console.log('ionViewWillLeave');
+  }
+  ngOnDestroy() {
+    console.log('ngOnDestroy');
   }
 }
