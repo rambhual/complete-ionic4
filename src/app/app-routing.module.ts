@@ -12,7 +12,9 @@ const routes: Routes = [
     path: 'products',
     loadChildren: './products/products.module#ProductsPageModule'
   },  { path: 'places', loadChildren: './places/places.module#PlacesPageModule' },
-  { path: 'place-detail', loadChildren: './places/discover/place-detail/place-detail.module#PlaceDetailPageModule' }
+  { path: 'place-detail', loadChildren: './places/discover/place-detail/place-detail.module#PlaceDetailPageModule' },
+  { path: 'offer-booking', loadChildren: './places/offers/offer-booking/offer-booking.module#OfferBookingPageModule' },
+  { path: 'bookings', loadChildren: './bookings/bookings.module#BookingsPageModule' }
 
 ];
 
