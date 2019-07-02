@@ -1,5 +1,8 @@
 {
   "name": "blog",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
   "type": "angular"
 }

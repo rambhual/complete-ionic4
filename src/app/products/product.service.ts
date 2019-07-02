@@ -6,17 +6,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
+  url = 'https://pacific-reef-60955.herokuapp.com/products';
   constructor(private httpClient: HttpClient) {}
 
   getProducts(): Observable<any[]> {
-    return this.httpClient.get<any[]>(
-      'https://pacific-reef-60955.herokuapp.com/products'
-    );
+    return this.httpClient.get<any[]>(`${this.url}`);
   }
 
   getProduct(productId: string): Observable<any> {
-    return this.httpClient.get<any>(
-      `https://pacific-reef-60955.herokuapp.com/products/${productId}`
-    );
+    return this.httpClient.get<any>(`${this.url}/${productId}`);
+  }
+
+  deleteProduct(productId: string): Observable<any> {
+    return this.httpClient.delete<any>(`{this.url}/${productId}`);
   }
 }

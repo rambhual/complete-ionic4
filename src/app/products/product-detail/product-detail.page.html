@@ -1,10 +1,15 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="products"></ion-back-button>
+      <ion-buttons>
+        <ion-back-button slot="start" defaultHref="products"></ion-back-button>
       </ion-buttons>
       <ion-title>{{ loadedProduct.name }}</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="onDeleteProduct(loadedProduct._id)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>

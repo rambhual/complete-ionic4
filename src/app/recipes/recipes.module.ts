@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { RecipesPage } from './recipes.page';
+import { RecipeItemPage } from './recipe-item/recipe-item.page';
 
 const routes: Routes = [
   {
@@ -14,8 +15,7 @@ const routes: Routes = [
   },
   {
     path: ':recipeId',
-    loadChildren:
-      './recipes/recipe-detail/recipe-detail.module#RecipeDetailPageModule'
+    loadChildren: './recipe-detail/recipe-detail.module#RecipeDetailPageModule'
   }
 ];
 
@@ -26,6 +26,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [RecipesPage]
+  declarations: [RecipesPage, RecipeItemPage]
 })
 export class RecipesPageModule {}

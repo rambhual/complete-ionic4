@@ -17,16 +17,7 @@ export class ProductsPage implements OnInit {
 
   ngOnInit() {
     this.productService.getProducts().subscribe(product => {
-      this.presentLoading();
       this.products = product;
     });
-  }
-
-  async presentLoading() {
-    const loading = await this.loadingController.create({
-      message: 'Please wait while loading...',
-      duration: 2000
-    });
-    await loading.present();
   }
 }
